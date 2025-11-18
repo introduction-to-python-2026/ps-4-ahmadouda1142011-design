@@ -35,6 +35,6 @@ def split_at_first_digit(formula):
             number = int(formula[i:])
             return prefix, number
 
-    # No digits found
+    
     return formula, 1
 
