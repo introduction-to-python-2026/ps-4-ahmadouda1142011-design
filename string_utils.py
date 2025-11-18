@@ -4,10 +4,13 @@ def split_before_each_uppercases(formula):
 
     for i in range(1, len(formula)):
         if formula[i].isupper():
-            parts.append(formula[start:i])
+            part = formula[start:i]
+            parts.append(part)
             start = i
 
-    parts.append(formula[start:])
+    last_part = formula[start:]
+    parts.append(last_part)
+
     return parts
 
 
@@ -19,8 +22,8 @@ def split_before_each_uppercases(formula):
 
 def split_at_first_digit(formula):
     
-    for i, ch in enumerate(formula):
-        if ch.isdigit():
+for i in range(len(formula)):
+        if formula[i].isdigit():
             prefix = formula[:i]
             number = int(formula[i:])
             return prefix, number
